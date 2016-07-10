@@ -1,0 +1,68 @@
+/*Setting the color palettes*/
+/*Setting common font size & font weight*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.clearfix {
+  overflow: auto;
+  zoom: 1; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #EEEEEE; }
+  body .side-nav-bar {
+    position: absolute;
+    left: 0em;
+    width: 13em;
+    height: 100%;
+    background-color: #2C3E50; }
+    body .side-nav-bar .nav-bar-header {
+      background-color: #26C281;
+      height: 10%; }
+      body .side-nav-bar .nav-bar-header h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        padding-left: 25px;
+        padding-top: 17px;
+        color: #fff;
+        font-weight: 400;
+        display: inline;
+        float: left; }
+      body .side-nav-bar .nav-bar-header i {
+        color: #d34836;
+        padding-top: 17px;
+        padding-left: 10px;
+        font-size: 22px; }
+    body .side-nav-bar ul {
+      width: 100%;
+      list-style: none;
+      margin-top: 2em;
+      padding: 0; }
+      body .side-nav-bar ul li {
+        height: 40px;
+        padding-left: 15px;
+        padding-top: 10px; }
+        body .side-nav-bar ul li a {
+          color: #fff;
+          text-decoration: none; }
+          body .side-nav-bar ul li a i {
+            display: inline;
+            float: left;
+            margin-right: 15px; }
+          body .side-nav-bar ul li a:hover {
+            text-decoration: none;
+            color: #fff; }
+          body .side-nav-bar ul li a:active, body .side-nav-bar ul li a:focus {
+            text-decoration: none;
+            outline: none;
+            color: red; }
+        body .side-nav-bar ul li:hover {
+          border-left: 1px solid #E74C3C;
+          background: rgba(255, 255, 255, 0.2);
+          cursor: pointer; }
+  body .body-content {
+    margin-left: 14em;
+    width: 85%; }

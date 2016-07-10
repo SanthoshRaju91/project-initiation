@@ -1,6 +1,6 @@
 module.exports = (function() {
-  angular.module('App', ['app.route'])
-    .controller('AppCtrl', ['$scope', function($scope) {
+  angular.module('App', ['app.route', 'app.component', 'ngProgress'])
+    .controller('AppCtrl', ['$scope', '$timeout', 'ngProgressFactory', function($scope, $timeout, ngProgressFactory) {
       $scope.employees = [{
         name: 'Santhosh Raju',
         location: 'Bangalore'
@@ -12,22 +12,12 @@ module.exports = (function() {
       $scope.update = function(employee, prop, value) {
         employee[prop] = value;
       };
-    }])
-    .component('employeeDetails', {
-      templateUrl: './templates/components/employeeDetails.html',
-      controller:  function() {
-        var ctrl = this;
-        ctrl.delete = function() {
-          ctrl.onDelete({employee: ctrl.employee});
-        }
-        ctrl.update = function() {
-          ctrl.onUpdate({employee: ctrl.employee, prop: 'location', value: 'Bangalore'});
-        }
-      },
-      bindings: {
-        employee: '<',
-        onDelete: '&',
-        onUpdate: '&'
-      }
-    });
+
+      $scope.progressbar = ngProgressFactory.createInstance();
+      $scope.progressbar.setParent(document.getElementById('progress-container'));
+      $scope.progressbar.start();
+      $timeout(function() {
+        $scope.progressbar.complete();
+      }, 2000);
+    }]);
 })();

@@ -29,7 +29,11 @@ var vendor_files = [
   'bower_components/jquery/dist/jquery.min.js',
   'bower_components/angular-ui-router/release/angular-ui-router.min.js',
   'bower_components/bootstrap/dist/css/bootstrap.min.css',
-  'bower_components/bootstrap/dist/js/bootstrap.min.js'
+  'bower_components/bootstrap/dist/js/bootstrap.min.js',
+  'bower_components/ngprogress/build/ngprogress.min.js',
+  'bower_components/ngprogress/ngProgress.css',
+  'node_modules/angular-chart.js/dist/angular-chart.min.js',
+  'bower_components/Chart.js/Chart.min.js'
 ];
 
 /*
@@ -43,10 +47,11 @@ var VENDOR_OUT_PATH = './vendor/**/*.*';
 */
 var APP_PATH = {
   js: './app/boot.js',
-  sass: './app/styles/**/*.scss',
+  sass: './app/styles/base.scss',
   templates: './app/templates/**/*.html',
   html: './app/index.html',
   assets: './app/asset/**/*.*',
+  sassWatchFiles: './app/styles/**/*.scss',
   jsWatchFiles: './app/**/*.js'
 }
 
@@ -91,7 +96,7 @@ var BUILD_PATH = {
 gulp.task('vendor', function() {
   for(var i=0; i<vendor_files.length; i++) {
     gulp.src(vendor_files[i])
-      .pipe(gulp.dest(VENDOR_OUT_PATH));
+      .pipe(gulp.dest(VENDOR_IN_PATH));
   }
 });
 
@@ -224,7 +229,7 @@ gulp.task('build:asset', function() {
 gulp.task('dev:watch', function() {
   require('./server.js');
   livereload.listen();
-  gulp.watch(APP_PATH.sass, ['dev:sass']);
+  gulp.watch(APP_PATH.sassWatchFiles, ['dev:sass']);
   gulp.watch(APP_PATH.jsWatchFiles, ['dev:js']);
   gulp.watch(APP_PATH.templates, ['dev:template']);
   gulp.watch(APP_PATH.html, ['dev:html']);
