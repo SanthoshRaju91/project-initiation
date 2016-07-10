@@ -1,0 +1,22 @@
+{
+  "name": "analytics-project",
+  "description": "Analytics project",
+  "main": "",
+  "authors": [
+    "Santhosh Raju"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.6"
+  }
+}

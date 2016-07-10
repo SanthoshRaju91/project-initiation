@@ -1,0 +1,33 @@
+{
+  "name": "analytics-project",
+  "version": "1.0.0",
+  "description": "Analytics project",
+  "main": "server.js",
+  "dependencies": {
+    "angular-chart.js": "^1.0.0-alpha8",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.11",
+    "gulp-concat": "^2.6.0",
+    "gulp-csslint": "^0.3.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-open": "^2.0.0",
+    "gulp-preprocess": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "gulp-webpack": "^1.5.0",
+    "jshint": "^2.9.2",
+    "static-server": "^2.0.3",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Santhosh Raju",
+  "license": "ISC"
+}

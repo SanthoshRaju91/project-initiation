@@ -1,0 +1,21 @@
+<html ng-app="App">
+  <head>
+    <title>Analytics Project</title>
+    <link rel="stylesheet" href="./vendor/bootstrap.min.css">
+    <script src="./vendor/jquery.min.js"></script>
+    <script src="./vendor/bootstrap.min.js"></script>
+    <script src="./vendor/angular.min.js"></script>
+    <script src="./vendor/angular-ui-router.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="AppCtrl">
+      <div ng-repeat="employee in employees">
+        <employee-details employee="employee" on-update="update(employee, prop, value)"></employee-details>
+      </div>
+    </div>
+    <!-- @if NODE_ENV='dev'-->
+    <script src="app.bundle.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <!-- @endif -->
+  </body>
+</html>
