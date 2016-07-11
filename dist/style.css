@@ -17,7 +17,10 @@ body {
     left: 0em;
     width: 13em;
     height: 100%;
-    background-color: #2C3E50; }
+    background-color: #2C3E50;
+    transition: width 0.2s linear;
+    -moz-transition: width 0.2s linear;
+    -webkit-transition: width 0.2s linear; }
     body .side-nav-bar .nav-bar-header {
       background-color: #26C281;
       height: 10%; }
@@ -60,9 +63,37 @@ body {
             outline: none;
             color: red; }
         body .side-nav-bar ul li:hover {
-          border-left: 1px solid #E74C3C;
-          background: rgba(255, 255, 255, 0.2);
+          border-left: 1px solid #6BB9F0;
+          background: rgba(34, 49, 63, 0.5);
           cursor: pointer; }
+    @media screen and (max-width: 768px) {
+      body .side-nav-bar {
+        width: 4em; } }
   body .body-content {
-    margin-left: 14em;
-    width: 85%; }
+    margin-left: 13em;
+    width: 85.8%; }
+    body .body-content .navbar-custom {
+      height: 62px;
+      border-radius: 0px;
+      margin: 0;
+      padding: 0;
+      border-color: #DADFE1;
+      background-color: #ECF0F1;
+      box-shadow: 1px 1px 1px #DADFE1; }
+      body .body-content .navbar-custom .navbar-collapse .navbar-form .has-feedback .form-control {
+        width: 350px;
+        border: none;
+        background: transparent;
+        box-shadow: 0 0 0;
+        border-radius: 0px;
+        border-bottom: 1px solid #6BB9F0; }
+      body .body-content .navbar-custom .navbar-collapse .navbar-form .has-feedback .form-control-feedback {
+        color: #000;
+        opacity: 0.5; }
+      body .body-content .navbar-custom .navbar-collapse ul .user-section {
+        position: relative;
+        top: -5px; }
+        body .body-content .navbar-custom .navbar-collapse ul .user-section a {
+          cursor: pointer; }
+          body .body-content .navbar-custom .navbar-collapse ul .user-section a i {
+            padding-left: 5px; }

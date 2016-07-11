@@ -1,5 +1,6 @@
 /*Setting the color palettes*/
 $White: #fff;
+$Black: #000;
 $ValenciaRed: #D64541;
 $RoyalBlue: #4183D7;
 $MalibuBlue: #6BB9F0;
@@ -18,9 +19,11 @@ $facebook: #3B5998;
 $twitter: #4099FF;
 $google: #d34836;
 $MadisonBlue: #2C3E50;
+$IronGray: #DADFE1;
 
 $Background1: $GalleryGrey;
 $Background2:$PorcelainGrey;
+$Background3: $IronGray;
 $SideBarBackground: $MadisonBlue;
 
 $PrimaryColor1: $ValenciaRed;
@@ -29,4 +32,4 @@ $PrimaryColor3: $EcstasyOrange;
 $PrimaryColor4: $JacksonsPurple;
 
 $RGBA1: rgba(255, 255, 255, 0.7);
-$RGBA2: rgba(255, 255, 255, 0.2);
+$RGBA2: rgba(34, 49, 63, 0.5);

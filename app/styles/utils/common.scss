@@ -16,6 +16,9 @@ body {
     width: 13em;
     height: 100%;
     background-color: $SideBarBackground;
+    transition: width 0.2s linear;
+    -moz-transition: width 0.2s linear;
+    -webkit-transition: width 0.2s linear;
 
     .nav-bar-header {
       background-color: $LightGreen;
@@ -72,15 +75,62 @@ body {
         }
 
         &:hover {
-          border-left: 1px solid $CinnabarRed;
+          border-left: 1px solid $MalibuBlue;
           background: $RGBA2;
           cursor: pointer;
         }
       }
     }
+
+    @media screen and (max-width: $break-small) {
+      width: 4em;
+    }
   }
   .body-content {
-    margin-left: 14em;
-    width: 85%;
+    margin-left: 13em;
+    width: 85.8%;
+    .navbar-custom {
+      height: 62px;
+      border-radius: 0px;
+      margin: 0;
+      padding: 0;
+      border-color: $Background3;
+      background-color: $Background2;
+      box-shadow: 1px 1px 1px $Background3;
+
+      .navbar-collapse {
+        .navbar-form {
+          .has-feedback {
+            .form-control {
+              width: 350px;
+              border: none;
+              background: transparent;
+              box-shadow: 0 0 0;
+              border-radius: 0px;
+              border-bottom: 1px solid $MalibuBlue;
+            }
+            .form-control-feedback {
+              color: $Black;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      .navbar-collapse {
+        ul {
+          .user-section {
+            position: relative;
+            top: -5px;
+
+            a {
+              cursor: pointer;
+              i {
+                padding-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
