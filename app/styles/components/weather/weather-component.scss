@@ -1,0 +1,33 @@
+.panel-weather {
+  height: 200px;
+  .panel-body {
+    color: $White;
+    font-weight: $LightWeight;
+    h4 {
+      font-size: $smallUp;
+      letter-spacing: 1px;
+    }
+    .weather-summary {
+      margin: 15px 5px;
+      h5 {
+        display: inline;
+        float: left;
+        font-size: $large;
+        font-weight: $NormalWeight;
+      }
+    }
+    .table {
+      tr {
+        td {
+          color: $White;
+          font-size: $small;
+        }
+        &:first-child {
+          td {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

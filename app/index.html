@@ -11,45 +11,30 @@
     <link rel="stylesheet" href="style.min.css"/>
     <!-- @endif -->
     <script src="./vendor/jquery.min.js"></script>
+    <script src="./vendor/Chart.min.js"></script>
     <script src="./vendor/bootstrap.min.js"></script>
     <script src="./vendor/angular.min.js"></script>
     <script src="./vendor/ngprogress.min.js"></script>
     <script src="./vendor/angular-ui-router.min.js"></script>
+    <script src="./vendor/angular-chart.min.js"></script>
+    <script src="./vendor/moment.min.js"></script>
   </head>
-  <body id="progress-container">
+  <body ng-controller="AppCtrl" class="{{collapseSideClass}}">
 
     <!--Side Nav Bar-->
-    <div class="side-nav-bar">
+    <div class="side-nav-bar {{collapseSideClass}}">
       <div class="nav-bar-header">
-        <h2 class="visible-sm visible-lg visible-md menu-header">Analytics</h2>
+        <h2 class="menu-header {{collapseSideIconClass}}">Analytics</h2>
         <i class="glyphicon glyphicon-fire"></i>
       </div>
-      <div class="weather-notification">
-        <span class=""></span>
+      <div class="weather-notification {{collapseSideIconClass}}">
+        <weather-canvas></weather-canvas>
       </div>
       <ul>
-        <li>
-          <a ui-sref="main">
-            <i class="glyphicon glyphicon-home"></i>
-            <span class="visible-sm visible-lg visible-md menu-title">Home</span>
-          </a>
-        </li>
-        <li>
-          <a ui-sref="main">
-            <i class="glyphicon glyphicon-signal"></i>
-            <span class="visible-sm visible-lg visible-md menu-title">Maps</span>
-          </a>
-        </li>
-        <li>
-          <a ui-sref="main">
-            <i class="glyphicon glyphicon-headphones"></i>
-            <span class="visible-sm visible-lg visible-md menu-title">Work Integration</span>
-          </a>
-        </li>
-        <li>
-          <a ui-sref="main">
-            <i class="glyphicon glyphicon-tasks"></i>
-            <span class="visible-sm visible-lg visible-md menu-title">Quality</span>
+        <li ng-repeat = "config in sideMenuConfig">
+          <a ui-sref="{{config.routeTo}}">
+            <i class="glyphicon {{config.iconClass}}"></i>
+            <span class="menu-title {{collapseSideIconClass}}">{{config.menuName}}</span>
           </a>
         </li>
       </ul>
@@ -65,14 +50,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" ng-click="collapseSideNav()">
               <i class="glyphicon glyphicon-menu-hamburger collapse-icon"></i>
             </a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="navbar-form navbar-left" role="search">
               <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Take me to..">
                 <i class="glyphicon glyphicon-search form-control-feedback"></i>
              </div>
             </div>
@@ -97,6 +82,10 @@
           </div>
         </div>
       </nav>
+
+      <div class="content-wrapper">
+        <ui-view></ui-view>
+      </div>
     </div>
     <!-- @if NODE_ENV='dev' -->
     <script src="app.bundle.js"></script>

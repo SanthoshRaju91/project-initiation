@@ -9,11 +9,21 @@
   overflow: auto;
   zoom: 1; }
 
+.panel-small {
+  width: 320px; }
+
+.panel-medium {
+  width: 650px; }
+
+.panel-large {
+  width: 900px; }
+
 body {
+  overflow-x: hidden;
   font-family: 'Lato', sans-serif;
   background-color: #EEEEEE; }
   body .side-nav-bar {
-    position: absolute;
+    position: fixed;
     left: 0em;
     width: 13em;
     height: 100%;
@@ -33,7 +43,10 @@ body {
         color: #fff;
         font-weight: 400;
         display: inline;
-        float: left; }
+        float: left;
+        transition: display 0.2s linear;
+        -moz-transition: display 0.2s linear;
+        -webkit-transition: display 0.2s linear; }
       body .side-nav-bar .nav-bar-header i {
         color: #d34836;
         padding-top: 17px;
@@ -66,17 +79,25 @@ body {
           border-left: 1px solid #6BB9F0;
           background: rgba(34, 49, 63, 0.5);
           cursor: pointer; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 800px) {
       body .side-nav-bar {
         width: 4em; } }
+  body .side-nav-bar.collapse-side {
+    width: 4em; }
   body .body-content {
     margin-left: 13em;
-    width: 85.8%; }
+    width: calc(100% - 182px);
+    transition: width 0.2s linear;
+    -moz-transition: width 0.2s linear;
+    -webkit-transition: width 0.2s linear; }
     body .body-content .navbar-custom {
+      position: fixed;
+      width: calc(100% - 182px);
       height: 62px;
       border-radius: 0px;
       margin: 0;
       padding: 0;
+      z-index: 11;
       border-color: #DADFE1;
       background-color: #ECF0F1;
       box-shadow: 1px 1px 1px #DADFE1; }
@@ -89,7 +110,7 @@ body {
         border-bottom: 1px solid #6BB9F0; }
       body .body-content .navbar-custom .navbar-collapse .navbar-form .has-feedback .form-control-feedback {
         color: #000;
-        opacity: 0.5; }
+        opacity: 0.2; }
       body .body-content .navbar-custom .navbar-collapse ul .user-section {
         position: relative;
         top: -5px; }
@@ -97,3 +118,56 @@ body {
           cursor: pointer; }
           body .body-content .navbar-custom .navbar-collapse ul .user-section a i {
             padding-left: 5px; }
+    @media screen and (max-width: 800px) {
+      body .body-content {
+        margin-left: 4em;
+        width: calc(100% - 57px); } }
+    body .body-content .content-wrapper {
+      padding-top: 5em;
+      padding-left: 2em; }
+
+.collapse-side .body-content {
+  margin-left: 4em;
+  width: calc(100% - 4em); }
+  .collapse-side .body-content .navbar-custom {
+    width: calc(100% - 4em); }
+
+.chart-component .panel {
+  padding: 10px;
+  border-color: #ECF0F1;
+  box-shadow: 0px 0px 0px; }
+  .chart-component .panel .panel-heading {
+    background-color: #fff; }
+    .chart-component .panel .panel-heading .heading {
+      display: block; }
+      .chart-component .panel .panel-heading .heading h4 {
+        color: #6C7A89;
+        letter-spacing: 0.3px;
+        padding: 0;
+        margin: 0;
+        display: inline; }
+      .chart-component .panel .panel-heading .heading .glyphicon {
+        float: right;
+        color: #6C7A89;
+        cursor: pointer; }
+
+.panel-weather {
+  height: 200px; }
+  .panel-weather .panel-body {
+    color: #fff;
+    font-weight: 300; }
+    .panel-weather .panel-body h4 {
+      font-size: 1.2em;
+      letter-spacing: 1px; }
+    .panel-weather .panel-body .weather-summary {
+      margin: 15px 5px; }
+      .panel-weather .panel-body .weather-summary h5 {
+        display: inline;
+        float: left;
+        font-size: 2em;
+        font-weight: 400; }
+    .panel-weather .panel-body .table tr td {
+      color: #fff;
+      font-size: 0.8em; }
+    .panel-weather .panel-body .table tr:first-child td {
+      border: none; }

@@ -1,3 +1,7 @@
+$small-width: 320px;
+$medium-width: 650px;
+$large-width: 900px;
+
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +11,25 @@
   overflow: auto;
   zoom: 1;
 }
+
+.panel-small {
+  width: $small-width;
+}
+
+.panel-medium {
+  width: $medium-width;
+}
+.panel-large {
+  width: $large-width;
+}
+
+
 body {
+  overflow-x: hidden;
   font-family: 'Lato', sans-serif;
   background-color: $Background1;
   .side-nav-bar {
-    position: absolute;
+    position: fixed;
     left: 0em;
     width: 13em;
     height: 100%;
@@ -33,6 +51,9 @@ body {
         font-weight: $NormalWeight;
         display: inline;
         float: left;
+        transition: display 0.2s linear;
+        -moz-transition: display 0.2s linear;
+        -webkit-transition: display 0.2s linear;
       }
       i {
         color: $google;
@@ -86,14 +107,24 @@ body {
       width: 4em;
     }
   }
+  .side-nav-bar.collapse-side {
+    width: 4em;
+  }
   .body-content {
     margin-left: 13em;
-    width: 85.8%;
+    width: calc(100% - 182px);
+    transition: width 0.2s linear;
+    -moz-transition: width 0.2s linear;
+    -webkit-transition: width 0.2s linear;
+
     .navbar-custom {
+      position: fixed;
+      width: calc(100% - 182px);
       height: 62px;
       border-radius: 0px;
       margin: 0;
       padding: 0;
+      z-index: 11;
       border-color: $Background3;
       background-color: $Background2;
       box-shadow: 1px 1px 1px $Background3;
@@ -111,7 +142,7 @@ body {
             }
             .form-control-feedback {
               color: $Black;
-              opacity: 0.5;
+              opacity: 0.2;
             }
           }
         }
@@ -131,6 +162,25 @@ body {
           }
         }
       }
+    }
+    @media screen and (max-width: $break-small) {
+      margin-left: 4em;
+      width: calc(100% - 57px);
+    }
+    .content-wrapper {
+      padding-top: 5em;
+      padding-left: 2em;
+    }
+  }
+}
+
+.collapse-side {
+  .body-content {
+    margin-left: 4em;
+    width: calc(100% - 4em);
+
+    .navbar-custom {
+      width: calc(100% - 4em);
     }
   }
 }

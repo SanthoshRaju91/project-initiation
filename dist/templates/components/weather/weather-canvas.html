@@ -1,0 +1,19 @@
+<div class="panel-weather">
+  <div class="panel-body">
+    <h4 class="text-center">{{$ctrl.forecast.today + ' - ' + $ctrl.forecast.date}}</h4>
+    <div class="weather-summary text-center">
+      <h5><span>{{$ctrl.forecast.temperature}}</span>&#176; C</h5>
+      <img ng-src="{{$ctrl.forecast.weatherIcon}}" alt="WeatherIcon"/>
+    </div>
+    <table class="table">
+      <tr>
+        <td>Min.</td>
+        <td><span>{{$ctrl.forecast.min}}</span>&#176; C</td>
+      </tr>
+      <tr>
+        <td>Max.</td>
+        <td><span>{{$ctrl.forecast.max}}</span>&#176; C</td>
+      </tr>
+    </table>
+  </div>
+</div>

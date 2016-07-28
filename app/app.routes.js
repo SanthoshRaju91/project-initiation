@@ -4,10 +4,10 @@ module.exports = (function() {
       $urlRouterProvider.otherwise('/login');
 
       $stateProvider
-        .state('landing', {
-          url: '/landing',
-          templateUrl: 'templates/landing.html',
-          controller: 'LandingCtrl'
+        .state('home', {
+          url: '/home',
+          templateUrl: 'templates/home.html',
+          controller: 'HomeCtrl'
         })
         .state('work', {
           url: '/work',

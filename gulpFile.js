@@ -33,7 +33,8 @@ var vendor_files = [
   'bower_components/ngprogress/build/ngprogress.min.js',
   'bower_components/ngprogress/ngProgress.css',
   'node_modules/angular-chart.js/dist/angular-chart.min.js',
-  'bower_components/Chart.js/Chart.min.js'
+  'bower_components/Chart.js/dist/Chart.min.js',
+  'bower_components/moment/min/moment.min.js'
 ];
 
 /*
