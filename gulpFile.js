@@ -224,6 +224,12 @@ gulp.task('build:asset', function() {
 });
 
 /*
+  @task dev:build
+  dev build task for project initiations
+*/
+gulp.task('dev:build', ['dev:sass', 'dev:js', 'dev:template', 'dev:html', 'dev:asset']);
+
+/*
   @task dev:watch
   dev watch task for monitoring the app files and reloading the browser.
 */
@@ -269,4 +275,4 @@ gulp.task('build', ['build:css', 'build:js', 'build:template', 'build:html', 'bu
   @task default
   default task for gulp, which are dev tasks
 */
-gulp.task('default', ['dev:vendor', 'dev:watch', 'dev:open']);
+gulp.task('default', ['dev:vendor', 'dev:build', 'dev:watch', 'dev:open']);
